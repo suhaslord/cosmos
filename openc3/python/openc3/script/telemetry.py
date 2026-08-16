@@ -59,18 +59,12 @@ def inject_tlm(
     received_time: int | None = None,
 ):
     message = f'inject_tlm("{target_name}", "{packet_name}", {item_hash}, type="{type}", stored={stored}'
+    kwargs = {"type": type, "stored": stored, "scope": scope}
     if received_time is not None:
         message += f", received_time={received_time}"
+        kwargs["received_time"] = received_time
     print(f"{message})")
-    openc3.script.API_SERVER.inject_tlm(
-        target_name,
-        packet_name,
-        item_hash,
-        type=type,
-        stored=stored,
-        scope=scope,
-        received_time=received_time,
-    )
+    openc3.script.API_SERVER.inject_tlm(target_name, packet_name, item_hash, **kwargs)
 
 
 def set_tlm(*args, type: str = "CONVERTED", scope: str = OPENC3_SCOPE):
