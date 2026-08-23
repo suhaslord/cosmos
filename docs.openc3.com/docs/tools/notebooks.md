@@ -11,6 +11,8 @@ Notebooks is an interactive procedure tool that allows operators to create, exec
 
 Notebooks are stored within COSMOS targets and can be created, edited, and executed through the Notebooks tool interface. When a notebook is started, it creates a unique execution instance that tracks the completion status of each step.
 
+Notebook definition files can also be included with a target in a COSMOS plugin. Installing the plugin deploys those notebook definitions with the target, so procedures can be version-controlled and distributed alongside scripts, tables, and screens.
+
 Notebooks are similar to various e-procedure systems and Juypter notebooks.
 
 ![Notebooks](/img/notebooks/notebooks.png)
